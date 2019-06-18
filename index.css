@@ -1,27 +1,33 @@
 @import url("animation.css");
 
-body{
-  background-color: beige;
-  font-family: helvetica;
+body {
+  display: flex;
+  padding: 5vh;
+  align-items: center;
+  justify-content: center;
 }
+
+
 
 .container {
   display: grid;
-  grid-template-rows: 1fr 8fr;
+  grid-template-rows: .5fr 8fr;
+  height: 80vh;
+  width: 80vw;
 }
 
 .subcontainer {
   display: grid;
   grid-template-columns:  repeat(4, 1fr);
-  grid-template-rows: repeat(4, minmax(25%, auto));;
+  grid-template-rows: repeat(4,1fr);;
   grid-gap: 20px;
-}
+  }
 
 .navbar {
-  font-size: 90%;
   font-weight: lighter;
   display: flex;
   align-items: center;
+  justify-content: center;
 
 }
 
@@ -33,7 +39,6 @@ body{
   align-items: center;
   border-radius: 5px;
   color: white;
-  font-size: 90%;
   font-weight: lighter;
   box-shadow: 15px 15px 25px 0px rgba(0,0,0,0.3);
 }
