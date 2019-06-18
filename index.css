@@ -1,0 +1,39 @@
+@import url("animation.css");
+
+body{
+  background-color: beige;
+  font-family: helvetica;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr 8fr;
+}
+
+.subcontainer {
+  display: grid;
+  grid-template-columns:  repeat(4, 1fr);
+  grid-template-rows: repeat(4, minmax(25%, auto));;
+  grid-gap: 20px;
+}
+
+.navbar {
+  font-size: 90%;
+  font-weight: lighter;
+  display: flex;
+  align-items: center;
+
+}
+
+.item {
+  background: linear-gradient(135deg, #05abe0 35%, #35E7CF 100%);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: white;
+  font-size: 90%;
+  font-weight: lighter;
+  box-shadow: 15px 15px 25px 0px rgba(0,0,0,0.3);
+}
