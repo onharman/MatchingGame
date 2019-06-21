@@ -2,9 +2,12 @@
 
 body {
   display: flex;
-  padding: 5vh;
+  padding: 10vh;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(60deg, #A1D2CE 0%, #78CAD2 100%);
+  color: white;
+  font-family: helvetica;
 }
 
 
@@ -12,8 +15,8 @@ body {
 .container {
   display: grid;
   grid-template-rows: .5fr 8fr;
-  height: 80vh;
-  width: 80vw;
+  height: 75vh;
+  width: 75vw;
 }
 
 .subcontainer {
@@ -24,6 +27,8 @@ body {
   }
 
 .navbar {
+  font-size: 4vh;
+  padding: 4vh;
   font-weight: lighter;
   display: flex;
   align-items: center;
@@ -32,8 +37,8 @@ body {
 }
 
 .item {
-  background: linear-gradient(135deg, #05abe0 35%, #35E7CF 100%);
-  padding: 20px;
+  background: #50858B;
+  padding: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,4 +46,22 @@ body {
   color: white;
   font-weight: lighter;
   box-shadow: 15px 15px 25px 0px rgba(0,0,0,0.3);
+}
+
+.item:hover {
+	animation: bounce .2s;
+}
+
+@keyframes bounce {
+	0%, 50%,100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+
+
+	25% {
+		-webkit-transform: translateY(-5px);
+		transform: translateY(-5px);
+	}
 }
