@@ -1,38 +1,76 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
-  <head>
-    <meta charset="utf-8">
-    <title>MatchingGame Chingu Voyage-10</title>
-    <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript" src="scripts.js"></script>
-    <script src="https://use.fontawesome.com/releases/v5.9.0/js/all.js" data-auto-replace-svg="nest"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <title>Memory Game</title>
 
-  </head>
-  <body>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li>Score: <div id="score"></div></li>
+      <li><div id="restart" data-framework='restart'>Restart</div></li>
+    </ul>
+  </nav>
+  <section class="memory-game">
+    <div class="memory-card" data-framework='aurelia'>
+      <img class="front-face" src="../img/aurelia.svg" alt="Aurelia" />
+      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework='aurelia'>
+      <img class="front-face" src="../img/aurelia.svg" alt="Aurelia" />
+      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    </div>
 
-      <div class="container">
-        <div class="navbar">Matching Game</div>
-        <div class="subcontainer">
-          <div id="item1" class="item" onclick="clickMe()"><i class="fas fa-camera fa"></i></div>
-          <div id="item2" class="item">2</div>
-          <div class="item">3</div>
-          <div class="item">4</div>
-          <div class="item">5</div>
-          <div class="item">6</div>
-          <div class="item">7</div>
-          <div class="item">8</div>
-          <div class="item">9</div>
-          <div class="item">10</div>
-          <div class="item">11</div>
-          <div class="item">12</div>
-          <div class="item">13</div>
-          <div class="item">14</div>
-          <div class="item">15</div>
-          <div class="item">16</div>
-        </div>
-      </div>
+    <div class="memory-card" data-framework='vue'>
+      <img class="front-face" src="../img/vue.svg" alt="Vue" />
+      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework='vue'>
+      <img class="front-face" src="../img/vue.svg" alt="Vue" />
+      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    </div>
 
-  </body>
+    <div class="memory-card" data-framework='angular'>
+      <img class="front-face" src="../img/angular.svg" alt="Angular" />
+      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework='angular'>
+      <img class="front-face" src="../img/angular.svg" alt="Angular" />
+      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    </div>
+
+    <div class="memory-card" data-framework='ember'>
+      <img class="front-face" src="../img/ember.svg" alt="Ember" />
+      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework='ember'>
+      <img class="front-face" src="../img/ember.svg" alt="Ember" />
+      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    </div>
+
+    <div class="memory-card" data-framework='backbone'>
+      <img class="front-face" src="../img/backbone.svg" alt="Backbone" />
+      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework='backbone'>
+      <img class="front-face" src="../img/backbone.svg" alt="Backbone" />
+      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    </div>
+
+    <div class="memory-card" data-framework='react'>
+      <img class="front-face" src="../img/react.svg" alt="React" />
+      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework='react'>
+      <img class="front-face" src="../img/react.svg" alt="React" />
+      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    </div>
+  </section>
+  <script src='scripts.js'></script>
+
+
+</body>
 </html>

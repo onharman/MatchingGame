@@ -1,67 +1,60 @@
-@import url("animation.css");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
 body {
+  height: 100vh;
   display: flex;
-  padding: 10vh;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(60deg, #A1D2CE 0%, #78CAD2 100%);
-  color: white;
-  font-family: helvetica;
+  background: #ffffff;
 }
 
-
-
-.container {
-  display: grid;
-  grid-template-rows: .5fr 8fr;
-  height: 75vh;
-  width: 75vw;
+.restart {
+  
 }
 
-.subcontainer {
-  display: grid;
-  grid-template-columns:  repeat(4, 1fr);
-  grid-template-rows: repeat(4,1fr);;
-  grid-gap: 20px;
-  }
-
-.navbar {
-  font-size: 4vh;
-  padding: 4vh;
-  font-weight: lighter;
+.memory-game {
+  width: 640px;
+  height: 640px;
+  margin: auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
-
+  flex-wrap: wrap;
+  perspective: 1000px;
 }
 
-.item {
-  background: #50858B;
-  padding: 2px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
   border-radius: 5px;
-  color: white;
-  font-weight: lighter;
-  box-shadow: 15px 15px 25px 0px rgba(0,0,0,0.3);
+  background: #b4b4b4;
+  backface-visibility: hidden;
+  border: 1px solid black;
 }
 
-.item:hover {
-	animation: bounce .2s;
-}
-
-@keyframes bounce {
-	0%, 50%,100% {
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
-	}
-
-
-
-	25% {
-		-webkit-transform: translateY(-5px);
-		transform: translateY(-5px);
-	}
+.front-face {
+  transform: rotateY(180deg);
 }
