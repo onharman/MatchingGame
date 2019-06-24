@@ -5,7 +5,7 @@ let lockBoard = false
 let firstCard, secondCard
 
 // Starmaker
-let stars = '★★★★'
+let stars = '★★★'
 document.querySelector('#score').innerHTML = stars
 let scores = 8
 
