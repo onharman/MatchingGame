@@ -11,15 +11,15 @@ let scores = 8
 
 function starMaker () {
   if (scores <= 16) {
-    stars = '★★★★'
+    stars = '★★★'
   } else if (scores <= 20) {
-    stars = '★★★☆'
+    stars = '★★☆'
   } else if (scores <= 24) {
-    stars = '★★☆☆'
+    stars = '★☆☆'
   } else if (scores <= 28) {
-    stars = '★☆☆☆'
+    stars = '☆☆☆'
   } else {
-    stars = '☆☆☆☆'
+    stars = '☆☆☆'
   }
   document.querySelector('#score').innerHTML = stars
 }
