@@ -3,6 +3,7 @@ const cards = document.querySelectorAll('.memory-card')
 let hasFlippedCard = false
 let lockBoard = false
 let firstCard, secondCard
+let pairCount = 0
 
 // Starmaker
 let stars = '★★★'
@@ -57,6 +58,10 @@ function disableCards () {
   secondCard.removeEventListener('click', flipCard)
 
   resetBoard()
+  pairCount += 1
+  if (pairCount === 8) {
+    setTimeout(() => {alert('Well done! You must be really smart.') }, 200)
+  }
 }
 
 function unflipCards () {
