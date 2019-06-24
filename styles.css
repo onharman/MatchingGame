@@ -7,17 +7,52 @@
 body {
   height: 100vh;
   display: flex;
-  background: #ffffff;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #c9c9c9;
 }
 
-.restart {
-  
+.nav {
+  list-style-type: none;
+  display: flex;
+justify-content: flex-start;
+/* flex-wrap: wrap; */
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ul { */
+  /* list-style-type: none; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+/* } */
+
+button {
+  font-weight: lighter;
+  padding: 5px;
+  border-radius: 10%;
+
+}
+
+li {
+  margin-left: 20px
+}
+
+
 
 .memory-game {
+  justify-content: center;
+  align-items: center;
   width: 640px;
   height: 640px;
-  margin: auto;
+  /* margin: auto; */
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
@@ -25,8 +60,9 @@ body {
 
 .memory-card {
   width: calc(25% - 10px);
-  height: calc(33.333% - 10px);
+  height: calc(25% - 10px);
   margin: 5px;
+  border-radius: 10%;
   position: relative;
   transform: scale(1);
   transform-style: preserve-3d;
@@ -49,10 +85,9 @@ body {
   height: 100%;
   padding: 20px;
   position: absolute;
-  border-radius: 5px;
-  background: #b4b4b4;
+  border-radius: 10%;
+  background: #ececec;
   backface-visibility: hidden;
-  border: 1px solid black;
 }
 
 .front-face {

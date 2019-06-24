@@ -1,69 +1,95 @@
 const cards = document.querySelectorAll('.memory-card')
-const restarter = document.querySelector('#restart')
-restarter.addEventListener('click', flipCard)
+
+let hasFlippedCard = false
+let lockBoard = false
+let firstCard, secondCard
 
 // Starmaker
 let stars = '★★★★'
 document.querySelector('#score').innerHTML = stars
-let scores = 100
-
-// lockBoard
-let lockBoard = false
-
-// cardflipper
-let hasFlippedCard = false
-let firstCard, secondCard
-
-function flipCard () {
-  console.log(this)
-  if (this.dataset.framework === 'restart') {
-    cards.forEach(card => card.classList.remove('flip'))
-    const cards = document.querySelectorAll('.memory-card')
-  }
-  if (lockBoard) return
-  if (this === firstCard) return
-
-  this.classList.toggle('flip')
-
-  if (!hasFlippedCard) {
-    hasFlippedCard = true
-    firstCard = this
-  } else {
-    hasFlippedCard = false
-    secondCard = this
-
-    if (firstCard.dataset.framework === secondCard.dataset.framework) {
-      firstCard.removeEventListener('click', flipCard)
-      secondCard.removeEventListener('click', flipCard)
-    } else {
-      lockBoard = true
-      scores -= 1
-      starMaker()
-      setTimeout(() => {
-        firstCard.classList.remove('flip')
-        secondCard.classList.remove('flip')
-        lockBoard = false
-      }, 1500)
-    }
-  }
-}
-
-function restBoard () {
-  [hasFlippedCard, lockBoard] = [false, false]
-  [firstCard, secondCard] = [null, null]
-}
+let scores = 8
 
 function starMaker () {
-  if (scores > 99) {
+  if (scores <= 16) {
     stars = '★★★★'
-  } else if (scores > 98) {
+  } else if (scores <= 20) {
     stars = '★★★☆'
-  } else if (scores > 97) {
+  } else if (scores <= 24) {
     stars = '★★☆☆'
+  } else if (scores <= 28) {
+    stars = '★☆☆☆'
   } else {
     stars = '☆☆☆☆'
   }
   document.querySelector('#score').innerHTML = stars
 }
+
+function flipCard () {
+  if (lockBoard) return
+  if (this === firstCard) {
+    return
+  }
+
+  this.classList.add('flip')
+
+  if (!hasFlippedCard) {
+    // first click
+    hasFlippedCard = true
+    firstCard = this
+
+    return
+  }
+
+  // second click
+  secondCard = this
+
+  checkForMatch()
+}
+
+function checkForMatch () {
+  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework
+
+  isMatch ? disableCards() : unflipCards()
+}
+
+function disableCards () {
+  firstCard.removeEventListener('click', flipCard)
+  secondCard.removeEventListener('click', flipCard)
+
+  resetBoard()
+}
+
+function unflipCards () {
+  lockBoard = true
+
+  scores += 1
+  starMaker()
+
+  setTimeout(() => {
+    firstCard.classList.remove('flip')
+    secondCard.classList.remove('flip')
+
+    resetBoard()
+  }, 1500)
+}
+
+function resetBoard () {
+  [hasFlippedCard, lockBoard] = [false, false]
+  [firstCard, secondCard] = [null, null]
+}
+
+function shuffle () {
+  cards.forEach(card => {
+    let randomPos = Math.floor(Math.random() * 12)
+    card.style.order = randomPos
+  })
+}
+
+(function shuffle () {
+  cards.forEach(card => {
+    let randomPos = Math.floor(Math.random() * 12)
+    card.style.order = randomPos
+  })
+})()
 
 cards.forEach(card => card.addEventListener('click', flipCard))
