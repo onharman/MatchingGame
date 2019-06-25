@@ -60,7 +60,7 @@ function disableCards () {
   resetBoard()
   pairCount += 1
   if (pairCount === 8) {
-    setTimeout(() => {alert('Well done! You must be really smart.') }, 200)
+    setTimeout(() => { alert('Well done! You must be really smart.') }, 200)
   }
 }
 
