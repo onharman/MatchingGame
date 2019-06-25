@@ -17,7 +17,6 @@ body {
   list-style-type: none;
   display: flex;
 justify-content: flex-start;
-/* flex-wrap: wrap; */
 }
 
 .container {
@@ -26,13 +25,6 @@ justify-content: flex-start;
   align-items: center;
   justify-content: center;
 }
-
-/* ul { */
-  /* list-style-type: none; */
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-/* } */
 
 button {
   font-weight: lighter;
